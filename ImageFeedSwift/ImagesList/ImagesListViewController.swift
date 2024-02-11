@@ -20,6 +20,7 @@ class ImagesListViewController: UIViewController {
     }()
     
     override func viewDidLoad() {
+    
         super.viewDidLoad()
         tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
     }
@@ -69,6 +70,7 @@ extension ImagesListViewController {
         }
         cell.cellImage.image = image
         cell.cellData.text = dateFormatter.string(from: Date())
+        cell.cellData.addGradientToText(colors: [UIColor.red, UIColor.blue], startPoint: CGPoint(x: 0, y: 0), endPoint: CGPoint(x: 1, y: 1))
         
         if indexPath.row % 2 == 0 {
             cell.cellButton.setImage(UIImage(named: "like_button_on"), for: .normal)
